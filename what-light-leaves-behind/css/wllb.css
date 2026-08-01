@@ -1,0 +1,259 @@
+/* =========================
+   WLLB NAVIGATION
+========================= */
+
+.wllb-nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2.5rem 2.5rem 1.5rem;
+}
+
+.wllb-header {
+  display: flex;
+  flex-direction: column;
+  max-width: 260px;
+}
+
+.wllb-title-image {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+.subtitle a {
+  text-decoration: none;
+  color: black;
+}
+
+.subtitle a:hover {
+  text-decoration: underline;
+}
+
+.wllb-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.wllb-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: black;
+  text-transform: lowercase;
+}
+
+.wllb-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   WLLB INDEX INTRO
+========================= */
+
+.wllb-intro {
+  max-width: 520px;
+  margin: 6rem auto;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   ISSUE INDEX (hover list)
+========================= */
+
+.issues-index {
+  margin-top: 3rem;
+}
+
+.issue-row {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+}
+
+.issue-row span {
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+}
+
+.issue-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  filter: grayscale(100%) brightness(1.15);
+}
+
+.issue-row:hover::before {
+  opacity: 1;
+}
+
+/* =========================
+   ISSUE PAGE
+========================= */
+
+.issue-page {
+  padding: 4rem 1rem 6rem;
+}
+
+.issue-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 420px) 1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  align-items: start;
+}
+
+/* Letter */
+.issue-letter img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Image columns */
+.issue-images {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.issue-images.left {
+  align-items: flex-end;
+}
+
+.issue-images.right {
+  align-items: flex-start;
+}
+
+.issue-images img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Vertical positioning */
+.align-top {
+  margin-top: 0;
+}
+
+.align-lower {
+  margin-top: 3rem;
+}
+
+.align-bottom {
+  margin-top: 6rem;
+}
+
+/* =========================
+   ISSUE NAV
+========================= */
+
+.issue-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.issue-nav {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.issue-nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.issue-nav a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .wllb-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .wllb-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .issue-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .issue-images {
+    align-items: center;
+  }
+
+  .align-top,
+  .align-lower,
+  .align-bottom {
+    margin-top: 0;
+  }
+}
+
+/* =========================
+   WLLB INDEX PAGE
+========================= */
+
+.wllb-index {
+  margin: 6rem auto;
+  padding: 0 1rem;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wllb-index-image img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin-bottom: 3rem;
+}
+
+.wllb-index-text {
+  width: 100%;
+}
+
+.wllb-index-text p {
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
