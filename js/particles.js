@@ -29,17 +29,39 @@ const particles = [];
 const amount = 500;
 
 
+
 for(let i = 0; i < amount; i++){
 
     particles.push({
 
+        color:[
+            "190,225,255",
+            "170,215,250",
+            "210,235,255",
+            "150,205,245",
+            "230,245,255"
+        ][Math.floor(Math.random()*5)],
+        
         x: Math.random() * width,
         y: Math.random() * height,
 
-        size: Math.random() * 2 + .4,
+        size:
+        Math.random() < .18
+        ?
+        Math.random()*40+20
+        :
+        Math.random()*6+1.5,
 
+
+        // floating movement
         speedX: (Math.random() - .5) * .25,
         speedY: (Math.random() - .5) * .25,
+
+
+        // cursor push velocity
+        vx: 0,
+        vy: 0,
+
 
         opacity: Math.random() * .35 + .05,
 
@@ -64,13 +86,23 @@ function animate(){
         p.y += p.speedY;
 
 
+        // apply cursor push velocity
+        p.x += p.vx;
+        p.y += p.vy;
+
+
+        // slowly reduce push after interaction
+        p.vx *= .92;
+        p.vy *= .92;
+
+
+
         // gentle pulsing
         p.pulse += .01;
 
-
         let opacity =
             p.opacity +
-            Math.sin(p.pulse) * .05;
+            Math.sin(p.pulse) * .04;
 
 
 
@@ -83,12 +115,24 @@ function animate(){
             let distance = Math.sqrt(dx*dx + dy*dy);
 
 
-            if(distance < 180){
+            const radius = 100;
 
-                let force = (180-distance)/180;
 
-                p.x += dx * force * .025;
-                p.y += dy * force * .025;
+            if(distance < radius){
+
+                // normalize direction
+                let angle = Math.atan2(dy, dx);
+
+
+                // stronger near the cursor
+                let force = (radius - distance) / radius;
+
+
+                let push = force * 2.5;
+
+
+                p.vx += Math.cos(angle) * push;
+                p.vy += Math.sin(angle) * push;
 
             }
 
@@ -97,7 +141,6 @@ function animate(){
 
 
         // wrap edges
-
         if(p.x < 0) p.x = width;
         if(p.x > width) p.x = 0;
 
@@ -118,7 +161,7 @@ function animate(){
 
 
         ctx.fillStyle =
-            `rgba(70,60,50,${opacity})`;
+        `rgba(${p.color},${opacity})`;
 
         ctx.fill();
 
@@ -132,3 +175,5 @@ function animate(){
 
 
 animate();
+
+

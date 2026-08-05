@@ -14,7 +14,10 @@ body{
   color:#000;
   background:#fff;
 
+  padding-top:145px;
+
 }
+
 
 /* ==========================
  Navigation
@@ -28,7 +31,18 @@ body{
 
   padding:2rem 2rem 1.5rem;
 
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  width:100%;
+
+  z-index:1000;
+
 }
+
 
 .nav-top{
 
@@ -42,13 +56,21 @@ body{
 
 }
 
+
 .nav-title{
 
   font-size:2.25rem;
 
   letter-spacing:.15em;
 
+  text-decoration:none;
+
+  color:black;
+
+  display:inline-block;
+
 }
+
 
 .nav-links{
 
@@ -62,6 +84,7 @@ body{
 
 }
 
+
 .nav-links a{
 
   color:black;
@@ -74,11 +97,13 @@ body{
 
 }
 
+
 .nav-links a:hover{
 
   opacity:.55;
 
 }
+
 
 /* ==========================
  Hamburger
@@ -104,6 +129,7 @@ body{
 
 }
 
+
 .hamburger span{
 
   display:block;
@@ -120,6 +146,7 @@ body{
 
 }
 
+
 .hamburger.active span:nth-child(1){
 
   transform:
@@ -128,11 +155,13 @@ body{
 
 }
 
+
 .hamburger.active span:nth-child(2){
 
   opacity:0;
 
 }
+
 
 .hamburger.active span:nth-child(3){
 
@@ -142,8 +171,9 @@ body{
 
 }
 
+
 /* ==========================
- Mobile
+ Mobile Navigation
 ========================== */
 
 @media (max-width:768px){
@@ -153,6 +183,7 @@ body{
       display:block;
 
   }
+
 
   .nav-links{
 
@@ -175,6 +206,7 @@ body{
 
   }
 
+
   .nav-links.open{
 
       max-height:300px;
@@ -182,6 +214,147 @@ body{
       opacity:1;
 
       margin-top:2rem;
+
+  }
+
+}
+
+
+/* ==========================
+ About Page
+========================== */
+
+.about-page{
+
+  position:relative;
+
+  height:calc(100vh - 145px);
+
+  overflow:hidden;
+
+}
+
+
+.about-grid{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:5rem;
+
+  max-width:1200px;
+
+  height:100%;
+
+  margin:auto;
+
+  padding:2rem 4rem;
+
+  align-items:center;
+
+}
+
+
+.about-text{
+
+  max-width:520px;
+
+}
+
+
+.about-text h1{
+
+  font-size:2rem;
+
+  margin-bottom:1.5rem;
+
+}
+
+
+.about-text p{
+
+  line-height:1.8;
+
+}
+
+
+.about-image{
+
+  display:flex;
+
+  justify-content:center;
+
+}
+
+
+.about-image img{
+
+  width:100%;
+
+  max-height:75vh;
+
+  object-fit:contain;
+
+  display:block;
+
+}
+
+
+/* ==========================
+ Particle Background
+========================== */
+
+.about-page #particles{
+
+  position:absolute;
+
+  inset:0;
+
+  width:100%;
+
+  height:100%;
+
+  z-index:0;
+
+}
+
+
+/* ==========================
+ Mobile About
+========================== */
+
+@media (max-width:768px){
+
+  .about-page{
+
+      height:auto;
+
+      min-height:calc(100vh - 145px);
+
+      overflow:visible;
+
+  }
+
+
+  .about-grid{
+
+      grid-template-columns:1fr;
+
+      padding:3rem 2rem;
+
+      gap:3rem;
+
+  }
+
+
+  .about-image img{
+
+      max-height:none;
 
   }
 
