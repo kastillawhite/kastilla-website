@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>k a s t i l l a</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>k a s t i l l a</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/homepage.css">
+
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
-
 <nav class="main-nav">
-  <div class="nav-title">k a s t i l l a</div>
 
-  <div class="nav-links">
-    <a href="about.html">about</a>
-    <a href="what-light-leaves-behind/index.html">what light leaves behind</a>
-    <a href="engage.html">engage</a>
-  </div>
+    <div class="nav-top">
+
+        <div class="nav-title">
+            k a s t i l l a
+        </div>
+
+        <button class="hamburger" aria-label="Toggle navigation">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="about.html">about</a>
+
+        <a href="what-light-leaves-behind/index.html">
+            what light leaves behind
+        </a>
+        
+        <a href="engage.html">engage</a>
+
+    </div>
+
 </nav>
 
-<main class="home-content">
+<section class="hero">
 
-<p>
-Although I have never been one to see myself as "creative", I've been challenging myself with different mediums to provide structure to inspiration.
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        id="hero-video">
 
-If you've found your way here, welcome to my attempt at organised thought.
-</p>
+        <source
+            src="videos/kastilla_home.mp4"
+            type="video/mp4">
 
-</main>
+    </video>
 
-<script src="js/particles.js"></script>
+    <div class="hero-content">
+
+        <h2>oh... you found yourself here? </h2>
+
+    </div>
+
+</section>
+
+<script src="js/navigation.js"></script>
 
 </body>
 </html>

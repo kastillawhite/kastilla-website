@@ -1,128 +1,188 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ==========================
+   Reset
+========================== */
 
-/* Base */
-body {
-    font-family: "Hoefler Text", "Times New Roman", Times, serif;
-    background: white;
-    color: black;
-    line-height: 1.6;
-  }
-
-/* Navigation */
-.main-nav {
-    position: sticky;
-    top: 0;
-    background: white;
-    padding: 3rem 0 2rem;
-    text-align: center;
-  }
-  
-  .nav-title {
-    font-size: 2.25rem;
-    margin-bottom: 1rem;
-  }
-  
-  .nav-links a {
-    margin: 0 1.25rem;
-    text-decoration: none;
-    color: black;
-    font-size: 0.95rem;
-  }
-
-/* Content */
-.home-content {
-    max-width: 520px;
-    margin: 6rem auto;
-    text-align: center;
-    font-size: 1.05rem;
-  }
-
-.coming-soon {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .coming-soon-content {
-    text-align: center;
-  }
-  
-  .coming-soon-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .coming-soon-content p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .coming-soon-content .subtle {
-    font-size: 0.85rem;
-    opacity: 0.6;
-  }
-
-  /* ---------- Interactive Background ---------- */
-
-  #particles{
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100%;
-    z-index:0;
-    pointer-events:none;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-  overflow-x:hidden;
+
+  font-family:"Hoefler Text","Times New Roman",serif;
+  color:#000;
+  background:#fff;
+
 }
+
+/* ==========================
+ Navigation
+========================== */
 
 .main-nav{
-  position:relative;
-  z-index:5;
+
+  background:#fff;
+
+  border-bottom:1px solid #ececec;
+
+  padding:2rem 2rem 1.5rem;
+
 }
 
-.home-content{
+.nav-top{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
   position:relative;
-  z-index:5;
+
 }
 
-.home-content p{
+.nav-title{
+
+  font-size:2.25rem;
+
+  letter-spacing:.15em;
+
+}
+
+.nav-links{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:2.5rem;
+
+  margin-top:1.5rem;
+
+}
+
+.nav-links a{
+
+  color:black;
+
+  text-decoration:none;
+
+  font-size:.95rem;
+
+  transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+  opacity:.55;
+
+}
+
+/* ==========================
+ Hamburger
+========================== */
+
+.hamburger{
+
+  position:absolute;
+
+  right:0;
+
+  width:40px;
+
+  height:40px;
+
+  border:none;
+
   background:none;
-  padding:0;
+
+  cursor:pointer;
+
+  display:none;
+
 }
 
-/* Mobile adjustments */
-@media (max-width: 700px) {
+.hamburger span{
 
-  .main-nav {
-    padding: 2rem 1rem 1.5rem;
+  display:block;
+
+  width:24px;
+
+  height:1.5px;
+
+  margin:6px auto;
+
+  background:black;
+
+  transition:.3s;
+
+}
+
+.hamburger.active span:nth-child(1){
+
+  transform:
+      translateY(7.5px)
+      rotate(45deg);
+
+}
+
+.hamburger.active span:nth-child(2){
+
+  opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+  transform:
+      translateY(-7.5px)
+      rotate(-45deg);
+
+}
+
+/* ==========================
+ Mobile
+========================== */
+
+@media (max-width:768px){
+
+  .hamburger{
+
+      display:block;
+
   }
 
-  .nav-title {
-    font-size: 1.8rem;
+  .nav-links{
+
+      flex-direction:column;
+
+      gap:1.25rem;
+
+      overflow:hidden;
+
+      max-height:0;
+
+      opacity:0;
+
+      margin-top:0;
+
+      transition:
+          max-height .35s ease,
+          opacity .35s ease,
+          margin-top .35s ease;
+
   }
 
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-  }
+  .nav-links.open{
 
-  .nav-links a {
-    margin: 0;
-  }
+      max-height:300px;
 
-  .home-content {
-    max-width: 90%;
-    margin: 3rem auto;
-    font-size: 1rem;
+      opacity:1;
+
+      margin-top:2rem;
+
   }
 
 }
