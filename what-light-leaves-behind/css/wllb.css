@@ -261,64 +261,92 @@ body {
 .issue-nav a:hover {
   text-decoration: underline;
 }
+/* =========================
+   ISSUE VIDEO
+========================= */
+
+.issue-video {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
 
 /* =========================
    MOBILE
 ========================= */
 
+/* =========================
+   MOBILE ISSUE PAGE
+========================= */
+
 @media (max-width: 768px) {
+
+  /* Navigation */
   .wllb-nav {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1.5rem;
+    justify-content: space-between;
   }
 
-  .wllb-links {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
+  /* Stack the entire issue */
   .issue-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 3rem;
+    margin: 0;
   }
 
-  .issue-images {
+  /* Left images */
+  .issue-images.left {
+    width: 100%;
     align-items: center;
   }
 
+  /* Center letter */
+  .issue-letter {
+    width: 100%;
+  }
+
+  /* Right images */
+  .issue-images.right {
+    width: 100%;
+    align-items: center;
+  }
+
+  /* All images */
+  .issue-images img,
+  .issue-letter img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Video */
+  .issue-video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Remove desktop spacing */
   .align-top,
   .align-lower,
   .align-bottom {
     margin-top: 0;
   }
+
+  /* Previous / next */
+  .issue-nav {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
 }
 
-/* =========================
-   WLLB INDEX PAGE
-========================= */
-
-.wllb-index {
-  margin: 6rem auto;
-  padding: 0 1rem;
-  max-width: 520px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.wllb-index-image img {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-  margin-bottom: 3rem;
-}
-
-.wllb-index-text {
-  width: 100%;
-}
-
-.wllb-index-text p {
-  text-align: left;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
