@@ -1,21 +1,29 @@
 /* =========================
    WLLB NAVIGATION
 ========================= */
+
 html,
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
+
 .wllb-nav {
-  margin-top: 0;
   position: sticky;
   top: 0;
-  background: white;
-  z-index: 10;
+  z-index: 1000;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 2.5rem 2.5rem 1.5rem;
+  align-items: center;
+
+  padding: 20px 7%;
 }
 
 .wllb-header {
@@ -28,6 +36,7 @@ body{
   width: 100%;
   max-width: 220px;
   height: auto;
+  display: block;
 }
 
 .subtitle {
@@ -47,7 +56,7 @@ body{
 
 .wllb-links {
   display: flex;
-  gap: 2rem;
+  gap: 36px;
 }
 
 .wllb-links a {
@@ -61,6 +70,57 @@ body{
   text-decoration: underline;
 }
 
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 768px) {
+
+  .wllb-nav {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 18px 24px;
+  }
+
+  .wllb-header {
+    flex: 1;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .wllb-links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .wllb-links.active {
+    display: flex;
+  }
+
+  .wllb-title-image {
+    max-width: 230px;
+  }
+}
 /* =========================
    WLLB INDEX INTRO
 ========================= */
@@ -261,120 +321,4 @@ body{
   text-align: left;
   font-size: 1.05rem;
   line-height: 1.6;
-}
-
-/* -----------------------------
-   Sticky Navigation
------------------------------ */
-
-.wllb-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: rgba(255,255,255,.96);
-  backdrop-filter: blur(12px);
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 20px 7%;
-  box-sizing: border-box;
-}
-
-.wllb-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.wllb-links {
-  display: flex;
-  gap: 36px;
-}
-
-.wllb-links a {
-  text-decoration: none;
-}
-
-/* Hamburger */
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-@media (max-width: 768px) {
-
-  .wllb-nav {
-      flex-wrap: wrap;
-      padding: 18px 24px;
-  }
-
-  .nav-toggle {
-      display: block;
-  }
-
-  .wllb-links {
-      width: 100%;
-      display: none;
-      flex-direction: column;
-      margin-top: 18px;
-      gap: 18px;
-  }
-
-  .wllb-links.active {
-      display: flex;
-  }
-
-  .wllb-title-image {
-      max-width: 230px;
-  }
-
-}
-
-.issue-video {
-  max-width: 260px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* =========================
-   MOBILE WLLB NAVIGATION
-========================= */
-
-@media (max-width: 768px) {
-
-  .wllb-nav {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 24px;
-    box-sizing: border-box;
-  }
-
-  .wllb-header {
-    flex: 1;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .wllb-links {
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 18px;
-  }
-
-  .wllb-links.active {
-    display: flex;
-  }
 }
