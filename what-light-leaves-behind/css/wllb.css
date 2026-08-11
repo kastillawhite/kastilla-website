@@ -350,3 +350,27 @@ body {
 
 }
 
+/* =========================
+   WLLB INDEX IMAGE
+========================= */
+
+.wllb-index {
+  width: 100%;
+  max-width: 520px;
+  margin: 6rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.wllb-index-image {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wllb-index-image img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 auto 3rem;
+}
