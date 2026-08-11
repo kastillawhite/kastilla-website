@@ -341,3 +341,40 @@ body{
   height: auto;
   display: block;
 }
+
+/* =========================
+   MOBILE WLLB NAVIGATION
+========================= */
+
+@media (max-width: 768px) {
+
+  .wllb-nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    box-sizing: border-box;
+  }
+
+  .wllb-header {
+    flex: 1;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .wllb-links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .wllb-links.active {
+    display: flex;
+  }
+}
